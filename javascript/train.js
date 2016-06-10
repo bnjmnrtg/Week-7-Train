@@ -9,9 +9,11 @@ $(document).ready(function(){
 	var currentTime = moment();
 
 	
-	window.setInterval(function(){
+	window.setInterval(function clock(){
 		$('#time').html(moment(currentTime).format("hh:mm:ss a"));
 	}, 1000);
+
+	
 	
 	
 	$('#submit').on('click', function(){
