@@ -50,6 +50,7 @@ $(document).ready(function() {
         var trainFirstArrival = childSnapshot.val().firstArrival;
         var trainFrequency = childSnapshot.val().frequency;
 
+
         var startTime = moment(trainFirstArrival, "hh:mm a").subtract(1, "years");
         console.log(startTime);
         var convertedTime = moment(startTime, ["hh:mm a"]);
@@ -62,7 +63,9 @@ $(document).ready(function() {
         console.log(tMinutesTillTrain)
         var nextTrain = moment().add(tMinutesTillTrain, "minutes");
         console.log(nextTrain);
+
         var znextTrain = moment(nextTrain).format("hh:mm a");
+
         console.log(znextTrain);
         $("#traintable > tbody").append("<tr><td>" + trainName + "</td><td>" + trainDestination + "</td><td>" + trainFrequency + "</td><td>" + znextTrain + "</td><td>" +
             tMinutesTillTrain + "</td><tr>");
@@ -70,11 +73,12 @@ $(document).ready(function() {
 
     // setinterval
     // loop through table and set the times
-    
+
     // window.setInterval(function runTable() {
     //     for (var i = 0; i < trainSchedule.length; i++) {
     //         trainSchedule[i]
     //     }
     // }, 1000);
+
 
 });
