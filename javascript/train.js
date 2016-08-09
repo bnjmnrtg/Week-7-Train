@@ -50,9 +50,9 @@ $(document).ready(function() {
         var trainFirstArrival = childSnapshot.val().firstArrival;
         var trainFrequency = childSnapshot.val().frequency;
 
-        var startTime = moment(trainFirstArrival, "hh:mm").subtract(1, "years");
+        var startTime = moment(trainFirstArrival, "hh:mm a").subtract(1, "years");
         console.log(startTime);
-        var convertedTime = moment(startTime, ["hh:mm"]);
+        var convertedTime = moment(startTime, ["hh:mm a"]);
         console.log(convertedTime);
         var diffTime = moment().diff(convertedTime, "minutes");
         console.log(diffTime);
